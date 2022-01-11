@@ -18,7 +18,7 @@
         function crearMinijuego() {
 
             //Listado de minijuegos
-            $minijuegos = array(
+            $minijuegosLista = array(
                 1 => array("minijuego1", "enlace"),
                 2 => array("minijuego2", "enlace2"),
                 3 => array("minijuego3", "enlace3"),
@@ -36,13 +36,12 @@
             //Bindeamos los parámetros
             $consulta->bind_param("ss", $nombre, $enlace);
 
-            $nombre = "";
-            $enlace = "";
 
             //Iteramos sobre array
-            foreach ($minijuegos as $arr) {
+            foreach ($minijuegosLista as $minijuego) {
 
-                $nombre = "";
+                $nombre = $minijuego[0];
+                $enlace = $minijuego[1];
 
                 //Ejecutamos la consulta y si hay un error lo mostramos
                 if(!$consulta->execute()) echo $this->mysql->errno;
