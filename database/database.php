@@ -33,6 +33,9 @@
             //Preparamos la consulta
             $consulta = $this->prepararConsulta($sql);
 
+            $nombre = "";
+            $enlace = "";
+
             //Bindeamos los parámetros
             $consulta->bind_param("ss", $nombre, $enlace);
 
